@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <h1>Chat</h1>
+      <button id="clear" type="button">New chat</button>
+    </header>
+
+    <main id="log" class="log" aria-live="polite">
+      <section id="empty" class="empty">
+        <p class="big">Ask anything.</p>
+        <div class="suggestions">
+          <button type="button">Explain REST APIs in plain English</button>
+          <button type="button">Review my Python function for bugs</button>
+          <button type="button">Plan a weekend study schedule</button>
+        </div>
+      </section>
+    </main>
+
+    <form id="composer" class="composer">
+      <label for="input" class="sr">Message</label>
+      <textarea id="input" rows="1" maxlength="4000" placeholder="Type a message. Enter to send, Shift+Enter for a new line." required></textarea>
+      <button id="send" type="submit">Send</button>
+    </form>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
